@@ -12,7 +12,7 @@ echo Installing composer dependencies
 echo ================================
 echo.
 
-call composer Install
+call composer install
 
 echo.
 echo ================================
