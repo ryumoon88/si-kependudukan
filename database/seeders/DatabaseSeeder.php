@@ -26,7 +26,8 @@ class DatabaseSeeder extends Seeder
 
 
         $this->call([
-            PermissionSeeder::class
+            PermissionSeeder::class,
+            VisitorSeeder::class
         ]);
         $user = User::factory()->create([
             'name' => "Naufal Hady",

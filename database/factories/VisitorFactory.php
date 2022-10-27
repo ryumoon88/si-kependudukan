@@ -17,7 +17,8 @@ class VisitorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'ip_address' => fake()->ipv4(),
+            'date' => fake()->dateTimeBetween('-1 days')
         ];
     }
 }

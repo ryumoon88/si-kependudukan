@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('visitors', function (Blueprint $table) {
             $table->id();
-            $table->char('ip_address', 14);
+            $table->char('ip_address', 15);
             $table->date('date')->default(now());
         });
     }
