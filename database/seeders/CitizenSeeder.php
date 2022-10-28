@@ -20,12 +20,12 @@ class CitizenSeeder extends Seeder
             'first_name' => 'Naufal',
             'last_name' => 'Hady',
             'gender' => 'Male',
-            'address' => 'Komp. Filano Jaya II Blok GG 4 No.1',
-            'phone_number' => '0895602736337',
+            'address' => 'Indonesia',
+            'phone_number' => '0812345678910',
             'marital_status' => 'Single',
             'religion' => 'Islam',
-            'place_of_birth' => 'Padang',
-            'date_of_birth' => '2003-01-01',
+            'place_of_birth' => 'Indonesia',
+            'date_of_birth' => '1900-01-01',
             'blood_type' => 'A'
         ]);
 

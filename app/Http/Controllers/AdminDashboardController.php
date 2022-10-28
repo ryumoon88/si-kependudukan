@@ -3,11 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Visitor;
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\DB;
 
 class AdminDashboardController extends Controller
 {
