@@ -13,6 +13,7 @@ class AdminDashboardController extends Controller
 {
     public function index()
     {
+        #region Visitors
         $visitorsTillLastYear = Visitor::whereBetween('date', [date_sub(now(), date_interval_create_from_date_string('2 years')), now()])->get();
         $yearSeparated = $visitorsTillLastYear->groupBy(function ($item) {
             return $item->date->year;
@@ -22,7 +23,6 @@ class AdminDashboardController extends Controller
         $thisYearVisitorsCount = $thisYearVisitors->count();
         $yearlyVisitorPercentage = round((($thisYearVisitorsCount - $lastYearVisitors->count()) / $lastYearVisitors->count()) * 100, 2);
 
-        echo now()->format('Y-m-d');
         $lastMonthVisitors = $thisYearVisitors->where(function ($item) {
             return date('Y-m', $item->date->timestamp) == date('Y-m', date_sub(now(), date_interval_create_from_date_string('1 month'))->getTimestamp());
         });
@@ -40,6 +40,11 @@ class AdminDashboardController extends Controller
         });
         $thisDayVisitorsCount = $thisDayVisitors->count();
         $dailyVisitorPercentage = round((($thisDayVisitorsCount - $lastDayVisitors->count()) / $lastDayVisitors->count() * 100), 2);
+        #endregion Visitors
+
+        #region Submissions
+
+        #endregion
 
         return view('admins.index', compact('thisYearVisitorsCount', 'thisMonthVisitorsCount', 'thisDayVisitorsCount', 'yearlyVisitorPercentage', 'monthlyVisitorPercentage', 'dailyVisitorPercentage'));
     }
