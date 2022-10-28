@@ -15,7 +15,7 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'username' => ['required'],
+            'id_number' => ['required'],
             'password' => ['required'],
         ]);
 
@@ -23,7 +23,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended('/');
         }
-        return back()->with('error', 'Invalid username or password');
+        return back()->with('error', 'Invalid NIK or password');
     }
 
     public function logout(Request $request)

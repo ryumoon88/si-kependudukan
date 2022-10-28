@@ -16,24 +16,43 @@
                                     <li class="dropdown-header text-start">
                                         <h6>Filter</h6>
                                     </li>
-
-                                    <li><a class="dropdown-item" href="#">Today</a></li>
-                                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                    <li><a class="dropdown-item" href="">Today</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="">This
+                                            Month</a></li>
+                                    <li><a class="dropdown-item" href="">This
+                                            Year</a></li>
                                 </ul>
                             </div>
 
                             <div class="card-body">
                                 <h5 class="card-title">Visitor <span>| Today</span></h5>
-
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                         <i class="bi bi-cart"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>{{ $today_visitors_count }}</h6>
-                                        <span class="text-success small pt-1 fw-bold">{{ $summary_visitors_count }}%</span>
-                                        <span class="text-muted small pt-2 ps-1">increase</span>
+                                        <h6>{{ $thisDayVisitorsCount }}</h6>
+                                        <span
+                                            class="text-{{ $dailyVisitorPercentage > 0 ? 'success' : 'danger' }} small pt-1 fw-bold">{{ $dailyVisitorPercentage }}%</span>
+                                        <span
+                                            class="text-muted small pt-2 ps-1">{{ $dailyVisitorPercentage > 0 ? 'increase' : 'decrease' }}</span>
+
+                                    </div>
+                                    <div class="ps-3" hidden>
+                                        <h6>{{ $thisMonthVisitorsCount }}</h6>
+                                        <span
+                                            class="text-{{ $monthlyVisitorPercentage > 0 ? 'success' : 'danger' }} small pt-1 fw-bold">{{ $monthlyVisitorPercentage }}%</span>
+                                        <span
+                                            class="text-muted small pt-2 ps-1">{{ $monthlyVisitorPercentage > 0 ? 'increase' : 'decrease' }}</span>
+
+                                    </div>
+                                    <div class="ps-3" hidden>
+                                        <h6>{{ $thisYearVisitorsCount }}</h6>
+                                        <span
+                                            class="text-{{ $yearlyVisitorPercentage > 0 ? 'success' : 'danger' }} small pt-1 fw-bold">{{ $yearlyVisitorPercentage }}%</span>
+                                        <span
+                                            class="text-muted small pt-2 ps-1">{{ $yearlyVisitorPercentage > 0 ? 'increase' : 'decrease' }}</span>
 
                                     </div>
                                 </div>
@@ -54,14 +73,17 @@
                                         <h6>Filter</h6>
                                     </li>
 
-                                    <li><a class="dropdown-item" href="#">Today</a></li>
-                                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                    <li><a class="dropdown-item" href="">Today</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="">This
+                                            Month</a></li>
+                                    <li><a class="dropdown-item" href="">This
+                                            Year</a></li>
                                 </ul>
                             </div>
 
                             <div class="card-body">
-                                <h5 class="card-title">Revenue <span>| This Month</span></h5>
+                                <h5 class="card-title">Submission <span>| This Month</span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -71,7 +93,6 @@
                                         <h6>$3,264</h6>
                                         <span class="text-success small pt-1 fw-bold">8%</span> <span
                                             class="text-muted small pt-2 ps-1">increase</span>
-
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +120,7 @@
                             </div>
 
                             <div class="card-body">
-                                <h5 class="card-title">Customers <span>| This Year</span></h5>
+                                <h5 class="card-title">C. Submission <span>| This Year</span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -660,3 +681,30 @@
         </div>
     </section>
 @endsection
+@push('js')
+    <script type="module">
+        var componentFilters = $('.card.info-card');
+        componentFilters.each((i, e) => {
+            var componentId = i
+            $(e).find('.filter .dropdown-item').each((i, e) => {
+                $(e).click(function(e){
+                    e.preventDefault()
+                    var filters = ['Today', 'This Month', 'This Year'];
+                    var currentComponent = $(componentFilters[componentId]);
+                    var title = currentComponent.find('.card-body .card-title span')
+
+                    var currentComponentCards = currentComponent.find('.card-body > div > div:not(:first-child)');
+
+                    function switchActiveCard(newCard){
+                        currentComponentCards.each((i, c) => {
+                            $(c).attr('hidden', true);
+                        })
+                        $(newCard).removeAttr('hidden');
+                    }
+                    title.html(`| ${filters[i]}`);
+                    switchActiveCard(currentComponentCards[i]);
+                })
+            })
+        })
+    </script>
+@endpush

@@ -16,6 +16,7 @@
         rel="stylesheet">
 
     @vite(['resources/js/app.js', 'resources/js/admins/main.js'])
+    @stack('css')
 </head>
 
 <body>
@@ -44,6 +45,8 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
+
+    @stack('js')
 </body>
 
 </html>

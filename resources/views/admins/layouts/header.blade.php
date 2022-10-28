@@ -165,7 +165,7 @@
 
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                 <li class="dropdown-header">
-                    <h6>{{ Auth::user()->name }}</h6>
+                    <h6>{{ Auth::user()->citizen->first_name . ' ' . Auth::user()->citizen->last_name }}</h6>
                     <span>{{ Auth::user()->roles->first()->name }}</span>
                 </li>
                 <li>

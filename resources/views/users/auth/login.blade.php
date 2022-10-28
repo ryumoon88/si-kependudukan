@@ -42,11 +42,11 @@
                 <p class="text-white-50 mb-5">Please enter your login and password!</p>
                 <div class="form-outline form-white mb-4">
                     {{-- <label for="floatingInput">Email address</label> --}}
-                    <input type="username"
-                        class="form-control form-control-lg @error('username')
+                    <input type="text"
+                        class="form-control form-control-lg @error('id_number')
                         is-invalid
                     @enderror"
-                        name="username" placeholder="Username" autofocus />
+                        name="id_number" placeholder="NIK" autofocus />
                 </div>
 
                 <div class="form-outline form-white mb-4 ">

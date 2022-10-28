@@ -20,10 +20,11 @@ class VisitorCounter
     {
         $ip = $request->ip();
 
-        $visitor = Visitor::where('ip_address', $ip)->where('date', DB::raw('CURDATE()'));
+        $visitor = Visitor::where('ip_address', $ip)->where('date', date('Y-m-d'));
+        // dd($visitor->exists());
         if (!$visitor->exists()) {
             Visitor::create([
-                'ip_address' => $ip,
+                'ip_address' => $ip
             ]);
         }
         return $next($request);
