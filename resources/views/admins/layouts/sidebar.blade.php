@@ -2,13 +2,13 @@
 
     <li class="nav-item">
         <a class="nav-link {{ Str::endsWith(url()->current(), 'dashboard') ? '' : 'collapsed' }}"
-            href="{{ route('admins.dashboard') }}">
+            href="{{ route('admin.dashboard') }}">
             <i class="bi bi-grid"></i>
             <span>Dashboard</span>
         </a>
     </li><!-- End Dashboard Nav -->
     <li class="nav-item">
-        <a href="{{ route('admins.citizens') }}"
+        <a href="{{ route('admin.dashboard.citizen') }}"
             class="nav-link {{ Str::endsWith(url()->current(), 'citizens') ? '' : 'collapsed' }}">
             <i class="bi bi-people-fill"></i>
             <span>Citizens</span>

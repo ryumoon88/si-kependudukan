@@ -19,7 +19,9 @@ class UserSeeder extends Seeder
         $super_admin = Role::findByName('Super-Admin', 'admin');
         $user = User::factory()->create([
             'id_number' => '1370000000000008',
-            'citizen_id' => 1
+            'citizen_id' => 1,
+            'phone_number' => '0812345678910',
+            'email' => 'naufalhady6@gmail.com'
         ]);
 
         $user->assignRole($super_admin);

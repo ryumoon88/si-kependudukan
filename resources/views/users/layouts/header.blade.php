@@ -1,6 +1,6 @@
 <div class="container d-flex align-items-center justify-content-between">
     <div class="logo">
-        <h1><a href="{{ route('users.index') }}">SI Kependudukan</a></h1>
+        <h1><a href="{{ route('user.home') }}">SI Kependudukan</a></h1>
         {{-- <!-- Uncomment below if you prefer to use an image logo --> --}}
         {{-- <a href="index.html"><img src="assets{{ Vite::image('logo.png') }}" alt="" class="img-fluid"></a> --}}
     </div>
@@ -8,9 +8,9 @@
     <nav id="navbar" class="navbar">
         <ul>
             <li><a class="nav-link scrollto"
-                    href="@if (Route::is('users.index')) #hero @else {{ route('users.index') }} @endif">Home</a></li>
+                    href="@if (Route::is('user.home')) #hero @else {{ route('user.home') }} @endif">Home</a></li>
             <li><a class="nav-link scrollto"
-                    href="@if (Route::is('users.index')) #about @else {{ url('/#about') }} @endif">About</a>
+                    href="@if (Route::is('user.home')) #about @else {{ url('/#about') }} @endif">About</a>
             </li>
             <li><a class="nav-link scrollto" href="#services">Services</a></li>
             {{-- <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li> --}}
@@ -25,10 +25,10 @@
                             class="bi bi-chevron-down"></i></a>
                     <ul>
                         @if (Auth::user()->hasPermissionTo('view-admin-dashboard', 'admin'))
-                            <li><a href="{{ route('admins.dashboard') }}"> Dashboard</a></li>
+                            <li><a href="{{ route('admin.dashboard') }}"> Dashboard</a></li>
                         @endif
                         <li>
-                            <form action="{{ route('users.logout') }}" method="post" class="d-flex">
+                            <form action="{{ route('user.logout') }}" method="post" class="d-flex">
                                 @csrf
                                 <button type="submit" class="btn w-100 text-start">Logout</button>
                             </form>

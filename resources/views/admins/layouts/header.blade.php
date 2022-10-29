@@ -1,5 +1,5 @@
 <div class="d-flex align-items-center justify-content-between">
-    <a href="{{ route('admins.dashboard') }}" class="logo d-flex align-items-center">
+    <a href="{{ route('admin.dashboard') }}" class="logo d-flex align-items-center">
         <img src="{{ Vite::image('logo.png') }}" alt="">
         <span class="d-none d-lg-block">{{ env('APP_NAME', 'NiceAdmin') }}</span>
     </a>
@@ -183,7 +183,7 @@
                 </li>
 
                 <li>
-                    <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                    <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.dashboard.profile') }}">
                         <i class="bi bi-gear"></i>
                         <span>Account Settings</span>
                     </a>
@@ -203,7 +203,7 @@
                 </li>
 
                 <li>
-                    <form action="{{ route('users.logout') }}" method="POST">
+                    <form action="{{ route('user.logout') }}" method="POST">
                         @csrf
                         <button type="submit" class="dropdown-item d-flex align-items-center"><i
                                 class="bi bi-box-arrow-right"></i>Sign

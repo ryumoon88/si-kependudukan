@@ -30,7 +30,7 @@
         @include('users.layouts.header')
     </header><!-- End Header -->
 
-    @if (Route::is('users.index'))
+    @if (Route::is('user.home'))
         @include('users.layouts.hero')
     @endif
 

@@ -21,7 +21,6 @@ class CitizenSeeder extends Seeder
             'last_name' => 'Hady',
             'gender' => 'Male',
             'address' => 'Indonesia',
-            'phone_number' => '0812345678910',
             'marital_status' => 'Single',
             'religion' => 'Islam',
             'place_of_birth' => 'Indonesia',

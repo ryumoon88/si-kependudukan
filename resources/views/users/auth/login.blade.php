@@ -36,7 +36,7 @@
 @section('content')
     <div id="canvas-shapes">
         <div class="content d-flex w-100 justify-content-center align-items-center">
-            <form action="{{ route('users.authenticate') }}" class="text-center" method="post">
+            <form action="{{ route('user.authenticate') }}" class="text-center" method="post">
                 @csrf
                 <h2 class="fw-bold mb-2 text-uppercase text-white">Please sign in</h2>
                 <p class="text-white-50 mb-5">Please enter your login and password!</p>

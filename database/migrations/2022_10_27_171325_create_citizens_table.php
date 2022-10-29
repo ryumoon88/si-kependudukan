@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('last_name');
             $table->enum('gender', ['Male', 'Female']);
             $table->string('address')->default('Live with parents');
-            $table->string('phone_number')->nullable();
             $table->enum('marital_status', ['Single', 'Married', 'Divorced'])->default('Single');
             $table->enum('religion', ['Islam', 'Protestan', 'Khatolik', 'Hindu', 'Buddha', 'Konghucu'])->nullable();
             $table->string('place_of_birth');

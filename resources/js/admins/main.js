@@ -331,4 +331,46 @@ window.simpleDatatables = simpleDatatables;
             }).observe(mainContainer);
         }, 200);
     }
+
+    // Custom script
+    var modalElement = document.getElementById('modal')
+    var modalTitleElement = $(modalElement).find('.modal-title');
+    var modalBodyElement = $(modalElement).find('.modal-body');
+    var modalFooterElement = $(modalElement).find('.modal-footer');
+    var modalCancelAction = modalFooterElement.find('button:first-child');
+    var modalSubmitAction = modalFooterElement.find('button:not(:first-child)');
+
+    function setModal(title, body, type) {
+        modalTitleElement.text(title);
+        modalBodyElement.html(body)
+        if (type == 'yesno') {
+            modalCancelAction.removeClass('btn-secondary')
+            modalCancelAction.addClass('btn-danger')
+            modalSubmitAction.removeClass('btn-primary')
+            modalSubmitAction.addClass('btn-success')
+            modalCancelAction.text("No");
+            modalSubmitAction.text('Yes')
+        }
+    }
+
+    function resetModal() {
+        modalCancelAction.removeClass('btn-primary btn-secondary btn-success btn-warning btn-danger btn-info btn-light btn-dark')
+        modalCancelAction.addClass('btn-secondary')
+        modalSubmitAction.removeClass('btn-primary btn-secondary btn-success btn-warning btn-danger btn-info btn-light btn-dark')
+        modalSubmitAction.addClass('btn-success')
+        modalSubmitAction.text('Submit')
+    }
+
+    function getModal() {
+        return new bootstrap.Modal($('#modal'));
+    }
+
+    modalElement.addEventListener('hidden.bs.modal', function () {
+        resetModal();
+    });
+
+    window.setModal = setModal
+    window.resetModal = resetModal
+    window.getModal = getModal
+
 })();

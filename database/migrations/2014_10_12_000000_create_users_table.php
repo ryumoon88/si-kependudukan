@@ -17,7 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('id_number', 16);
             $table->foreignId('citizen_id')->nullable();
+            $table->string('email')->nullable();
             $table->string('password');
+            $table->text('about')->nullable();
+            $table->char('phone_number', 13);
             $table->rememberToken();
             $table->timestamps();
         });
