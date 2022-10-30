@@ -1260,7 +1260,7 @@ h6 {
 }
 
 /*#region Datatable  */
-.dataTable-wrapper.no-header .dataTable-container {
+/* .dataTable-wrapper.no-header .dataTable-container {
     border-top: 1px solid #d9d9d9;
 }
 
@@ -1299,7 +1299,6 @@ h6 {
     margin: 7px 0;
 }
 
-/* PAGER */
 .dataTable-pagination ul {
     margin: 0;
     padding-left: 0;
@@ -1349,7 +1348,6 @@ h6 {
     font-weight: bold;
 }
 
-/* TABLE */
 .dataTable-table {
     max-width: 100%;
     width: 100%;
@@ -1433,6 +1431,14 @@ h6 {
     clear: both;
     content: " ";
     display: table;
-}
+} */
 
 /*#endregion Datatable  */
+
+table.datatable {
+    font-size: 14px;
+}
+
+table.datatable>thead {
+    background-color: rgb(246, 246, 254);
+}

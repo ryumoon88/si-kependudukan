@@ -27,7 +27,8 @@
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0",
-        "spatie/laravel-medialibrary": "10.0.7"
+        "spatie/laravel-medialibrary": "10.0.7",
+        "yajra/laravel-datatables": "^9.0"
     },
     "autoload": {
         "psr-4": {

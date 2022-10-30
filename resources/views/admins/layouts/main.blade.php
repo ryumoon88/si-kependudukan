@@ -16,11 +16,14 @@
         rel="stylesheet">
 
     @vite(['resources/js/app.js', 'resources/js/admins/main.js'])
+
     @stack('css')
 </head>
 
 <body>
-
+    @php
+        isset($sided) ? $sided : ($sided = true);
+    @endphp
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
         @include('admins.layouts.header')
@@ -43,9 +46,12 @@
         <div class="pagetitle">
             {{ Breadcrumbs::render() }}
         </div><!-- End Page Title -->
-        @include('admins.layouts.content')
+        @if ($sided)
+            @include('admins.layouts.content-with-side')
+        @else
+            @include('admins.layouts.content-without-side')
+        @endif
     </main><!-- End #main -->
-
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         @include('admins.layouts.footer')

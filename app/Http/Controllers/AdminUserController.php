@@ -14,7 +14,7 @@ class AdminUserController extends Controller
 {
     public function index()
     {
-        return view('admins.profile.index');
+        return view('admins.profile.index', ['sided' => false]);
     }
 
     public function update(Request $request, User $user)

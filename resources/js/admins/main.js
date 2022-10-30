@@ -4,24 +4,25 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+import 'datatables.net-bs5/css/dataTables.bootstrap5.css'
 import '../../sass/admins/main.scss'
 import '../../css/admins/style.css'
 
 import ApexCharts from 'apexcharts';
-import * as simpleDatatables from 'simple-datatables';
 import * as echarts from 'echarts';
+import DataTable from 'datatables.net-bs5'
+// import DataTable from 'datatables.net';
 import 'chart.js';
 import 'quill';
 import 'tinymce';
-
 window.echarts = echarts
 window.ApexCharts = ApexCharts;
-window.simpleDatatables = simpleDatatables;
+window.DataTable = DataTable;
 
+DataTable(window, $);
 
 (function () {
     "use strict";
-
     /**
      * Easy selector helper function
      */
@@ -309,14 +310,6 @@ window.simpleDatatables = simpleDatatables;
                 form.classList.add('was-validated')
             }, false)
         })
-
-    /**
-     * Initiate Datatables
-     */
-    const datatables = select('.datatable', true)
-    datatables.forEach(datatable => {
-        new simpleDatatables.DataTable(datatable);
-    })
 
     /**
      * Autoresize echart charts

@@ -1,6 +1,6 @@
 @extends('admins.layouts.main')
 @section('content')
-    <section class="section profile">
+    <div class="section profile">
         <div class="row">
             <div class="col-xl-4">
                 <div class="card">
@@ -45,7 +45,8 @@
 
                             <li class="nav-item">
                                 <button class="nav-link" data-bs-toggle="tab"
-                                    data-bs-target="#profile-change-password">Change Password</button>
+                                    data-bs-target="#profile-change-password">Change
+                                    Password</button>
                             </li>
 
                         </ul>
@@ -94,7 +95,8 @@
                             </div>
                             <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
                                 <!-- Profile Edit Form -->
-                                <form action="{{ route('admin.dashboard.profile', ['user' => Auth::user()->id_number]) }}"
+                                <form
+                                    action="{{ route('admin.dashboard.profile.update', ['user' => Auth::user()->id_number]) }}"
                                     enctype="multipart/form-data" method="POST" class="edit-profile">
                                     @method('PUT')
                                     @csrf
@@ -113,23 +115,23 @@
                                     </div>
                                     @push('js')
                                         <script type="module">
-                                            var inputImage = $('input[name=image]')
-                                            var imagePlaceholder = $('img.profile-img-preview')
+                                        var inputImage = $('input[name=image]')
+                                        var imagePlaceholder = $('img.profile-img-preview')
 
-                                            inputImage.change(function(e){
-                                                var src = URL.createObjectURL($('input[name=image]')[0].files[0]);
-                                                imagePlaceholder.attr('src', src);
-                                                $('input[name=remove-image]').val(false)
-                                                console.log($('input[name=remove-image]').val())
-                                            })
+                                        inputImage.change(function(e){
+                                            var src = URL.createObjectURL($('input[name=image]')[0].files[0]);
+                                            imagePlaceholder.attr('src', src);
+                                            $('input[name=remove-image]').val(false)
+                                            console.log($('input[name=remove-image]').val())
+                                        })
 
-                                            $('button.btn-remove').click(function(e){
-                                                $('input[name=remove-image]').val(true)
-                                                inputImage.val('')
-                                                imagePlaceholder.attr('src', '{{ Vite::image('profile-picture-placeholder.png') }}')
-                                                console.log($('input[name=remove-image]').val())
-                                            })
-                                        </script>
+                                        $('button.btn-remove').click(function(e){
+                                            $('input[name=remove-image]').val(true)
+                                            inputImage.val('')
+                                            imagePlaceholder.attr('src', '{{ Vite::image('profile-picture-placeholder.png') }}')
+                                            console.log($('input[name=remove-image]').val())
+                                        })
+                                    </script>
                                     @endpush
                                     <div class="row mb-3">
                                         <label for="company" class="col-md-4 col-lg-3 col-form-label">ID Number</label>
@@ -157,8 +159,8 @@
                                         <div class="col-md-8 col-lg-9">
                                             <textarea name="about"
                                                 class="form-control @error('about')
-                                                is-invalid
-                                            @enderror"
+                                            is-invalid
+                                        @enderror"
                                                 id="about" style="height: 100px">{{ old('about', Auth::user()->about) }}</textarea>
                                             @error('about')
                                                 <div class="invalid-feedback" role="alert">
@@ -218,40 +220,40 @@
                                     </div>
 
                                     {{-- <div class="row mb-3">
-                                        <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Twitter
-                                            Profile</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="twitter" type="text" class="form-control" id="Twitter"
-                                                value="https://twitter.com/#">
-                                        </div>
+                                    <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Twitter
+                                        Profile</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <input name="twitter" type="text" class="form-control" id="Twitter"
+                                            value="https://twitter.com/#">
                                     </div>
+                                </div>
 
-                                    <div class="row mb-3">
-                                        <label for="Facebook" class="col-md-4 col-lg-3 col-form-label">Facebook
-                                            Profile</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="facebook" type="text" class="form-control" id="Facebook"
-                                                value="https://facebook.com/#">
-                                        </div>
+                                <div class="row mb-3">
+                                    <label for="Facebook" class="col-md-4 col-lg-3 col-form-label">Facebook
+                                        Profile</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <input name="facebook" type="text" class="form-control" id="Facebook"
+                                            value="https://facebook.com/#">
                                     </div>
+                                </div>
 
-                                    <div class="row mb-3">
-                                        <label for="Instagram" class="col-md-4 col-lg-3 col-form-label">Instagram
-                                            Profile</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="instagram" type="text" class="form-control" id="Instagram"
-                                                value="https://instagram.com/#">
-                                        </div>
+                                <div class="row mb-3">
+                                    <label for="Instagram" class="col-md-4 col-lg-3 col-form-label">Instagram
+                                        Profile</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <input name="instagram" type="text" class="form-control" id="Instagram"
+                                            value="https://instagram.com/#">
                                     </div>
+                                </div>
 
-                                    <div class="row mb-3">
-                                        <label for="Linkedin" class="col-md-4 col-lg-3 col-form-label">Linkedin
-                                            Profile</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="linkedin" type="text" class="form-control" id="Linkedin"
-                                                value="https://linkedin.com/#">
-                                        </div>
-                                    </div> --}}
+                                <div class="row mb-3">
+                                    <label for="Linkedin" class="col-md-4 col-lg-3 col-form-label">Linkedin
+                                        Profile</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <input name="linkedin" type="text" class="form-control" id="Linkedin"
+                                            value="https://linkedin.com/#">
+                                    </div>
+                                </div> --}}
 
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary">Save Changes</button>
@@ -303,8 +305,8 @@
 
                             </div>
                             {{-- @if (!empty($errors->toArray()))
-                                @dd($errors)
-                            @endif --}}
+                            @dd($errors)
+                        @endif --}}
                             <div class="tab-pane fade pt-3" id="profile-change-password">
                                 <!-- Change Password Form -->
                                 <form action="{{ route('admin.dashboard.profile.change-password') }}" method="POST">
@@ -316,8 +318,8 @@
                                         <div class="col-md-8 col-lg-9">
                                             <input name="password" type="password"
                                                 class="form-control @error('password')
-                                                is-invalid
-                                            @enderror"
+                                            is-invalid
+                                        @enderror"
                                                 id="currentPassword">
                                             @error('password')
                                                 <div class="invalid-feedback" role="alert">
@@ -333,8 +335,8 @@
                                         <div class="col-md-8 col-lg-9">
                                             <input name="newpassword" type="password"
                                                 class="form-control @error('newpassword')
-                                                is-invalid
-                                            @enderror"
+                                            is-invalid
+                                        @enderror"
                                                 id="newpassword">
                                             @error('newpassword')
                                                 <div class="invalid-feedback" role="alert">
@@ -349,8 +351,8 @@
                                         <div class="col-md-8 col-lg-9">
                                             <input name="newpassword_confirmation" type="password"
                                                 class="form-control @error('newpassword_confirmation')
-                                                is-invalid
-                                            @enderror"
+                                            is-invalid
+                                        @enderror"
                                                 id="renewpassword">
                                             @error('newpassword_confirmation')
                                                 <div class="invalid-feedback" role="alert">
@@ -373,5 +375,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 @endsection

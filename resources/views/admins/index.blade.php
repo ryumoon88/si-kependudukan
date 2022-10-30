@@ -1,4 +1,5 @@
 @extends('admins.layouts.main')
+
 @section('content')
     <!-- Sales Card -->
     <div class="col-xxl-4 col-md-6">
@@ -15,6 +16,7 @@
                             Month</a></li>
                     <li><a class="dropdown-item" href="">This
                             Year</a></li>
+                    <li><a class="dropdown-item" href="">All</a></li>
                 </ul>
             </div>
             <div class="card-body">
@@ -74,7 +76,7 @@
             </div>
 
             <div class="card-body">
-                <h5 class="card-title">Submission <span>| This Month</span></h5>
+                <h5 class="card-title">Citizen <span>| This Month</span></h5>
 
                 <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
