@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\CitizensDataTable;
 use App\Models\Visitor;
 use Illuminate\Http\Request;
 
@@ -43,10 +44,5 @@ class AdminDashboardController extends Controller
         #endregion
 
         return view('admins.index', compact('thisYearVisitorsCount', 'thisMonthVisitorsCount', 'thisDayVisitorsCount', 'yearlyVisitorPercentage', 'monthlyVisitorPercentage', 'dailyVisitorPercentage'));
-    }
-
-    public function citizens()
-    {
-        return view('admins.citizens.index');
     }
 }

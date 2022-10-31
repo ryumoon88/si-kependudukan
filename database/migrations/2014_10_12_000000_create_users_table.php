@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('password');
             $table->text('about')->nullable();
-            $table->char('phone_number', 13);
+            $table->char('phone_number', 20);
             $table->rememberToken();
             $table->timestamps();
         });

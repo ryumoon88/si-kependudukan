@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\CitizenController;
+use App\Http\Controllers\CitizenDashboardController;
 use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -40,7 +42,11 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
         Route::group(['prefix' => 'dashboard'], function () {
-            Route::get('/citizens', [AdminDashboardController::class, 'citizens'])->name('admin.dashboard.citizen');
+            Route::get('/citizens', [CitizenDashboardController::class, 'index'])->name('admin.dashboard.citizen');
+            Route::group(['prefix' => 'citizens'], function () {
+                Route::get('/{citizen:id_number}', [CitizenDashboardController::class, 'show'])->name('admin.dashboard.citizen.show');
+            });
+
             Route::get('/profile', [AdminUserController::class, 'index'])->name('admin.dashboard.profile');
 
             Route::group(['prefix' => 'profile'], function () {

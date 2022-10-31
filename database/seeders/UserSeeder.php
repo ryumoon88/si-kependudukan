@@ -23,7 +23,10 @@ class UserSeeder extends Seeder
             'phone_number' => '0812345678910',
             'email' => 'naufalhady6@gmail.com'
         ]);
-
         $user->assignRole($super_admin);
+
+        for ($i = 2; $i <= 500; $i++) {
+            User::factory()->create(['citizen_id' => $i]);
+        }
     }
 }

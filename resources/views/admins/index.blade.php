@@ -378,7 +378,7 @@
         </div>
     </div><!-- End Top Selling -->
 @endsection
-@push('js')
+@push('scripts')
     <script type="module">
         var componentFilters = $('.card.info-card');
         componentFilters.each((i, e) => {

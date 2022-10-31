@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\CitizensDataTable;
 use App\Models\Citizen;
 use Illuminate\Http\Request;
 
-class CitizenController extends Controller
+class CitizenDashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(CitizensDataTable $dataTable)
     {
+        return $dataTable->render('admins.citizens.index', ['sided' => false]);
     }
 
     /**
@@ -45,7 +47,8 @@ class CitizenController extends Controller
      */
     public function show(Citizen $citizen)
     {
-        //
+        $sided = false;
+        return view('admins.citizens.show', compact('citizen', 'sided'));
     }
 
     /**

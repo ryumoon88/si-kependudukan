@@ -28,6 +28,6 @@ class CitizenSeeder extends Seeder
             'blood_type' => 'A'
         ]);
 
-        Citizen::factory(100)->create();
+        Citizen::factory(1000)->create();
     }
 }

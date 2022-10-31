@@ -17,7 +17,7 @@
 
     @vite(['resources/js/app.js', 'resources/js/admins/main.js'])
 
-    @stack('css')
+    @stack('styles')
 </head>
 
 <body>
@@ -79,7 +79,7 @@
             </div>
         </div>
     </div>
-    @stack('js')
+    @stack('scripts')
 </body>
 
 </html>

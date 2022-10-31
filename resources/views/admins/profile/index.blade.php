@@ -113,7 +113,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    @push('js')
+                                    @push('scripts')
                                         <script type="module">
                                         var inputImage = $('input[name=image]')
                                         var imagePlaceholder = $('img.profile-img-preview')
