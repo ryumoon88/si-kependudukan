@@ -28,7 +28,8 @@ class CitizenFactory extends Factory
             'religion' => $religion,
             'place_of_birth' => fake()->country(),
             'date_of_birth' => fake()->date('Y-m-d H:i:s'),
-            'blood_type' => $blood_type
+            'blood_type' => $blood_type,
+            'profession' => fake()->jobTitle()
         ];
     }
 }
