@@ -42,40 +42,24 @@
     </style>
 @endpush
 @section('content')
-<<<<<<< HEAD
-    <div id="canvas-shapes">
-        <div class="content d-flex w-100 justify-content-center align-items-center">
-            <form action="{{ route('user.authenticate') }}" class="text-center" method="post">
-                @csrf
-                <h2 class="fw-bold mb-2 text-uppercase text-white">Please sign in</h2>
-                <p class="text-white-50 mb-5">Please enter your login and password!</p>
-                <div class="form-outline form-white mb-4">
-                    {{-- <label for="floatingInput">Email address</label> --}}
-                    <input type="text"
-                        class="form-control form-control-lg @error('id_number')
-                        is-invalid
-                    @enderror"
-                        name="id_number" placeholder="NIK" autofocus />
-=======
     <section class="vh-100">
         <div class="container py-5 h-100">
             <div class="row d-flex align-items-center justify-content-center h-100">
                 <div class="col-md-8 col-lg-7 col-xl-6">
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
                         class="img-fluid" alt="Phone image">
->>>>>>> ffd9fc981e16e75306afd73fe546a65a3632a6c8
                 </div>
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                    <form action="{{ route('users.authenticate') }}" class="text-center" method="post">
+                    <form action="{{ route('user.authenticate') }}" class="text-center" method="post">
                         @csrf
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <input type="username" id="form1Example13"
+                            <input type="id_number" id="form1Example13"
                                 class="form-control form-control-lg
-                                @error('username')
+                                @error('id_number')
                             is-invalid
                         @enderror"
-                                name="username" placeholder="Username" autofocus />
+                                name="id_number" placeholder="NIK" autofocus />
                             {{-- <label class="form-label" for="form1Example13">Email address</label> --}}
                         </div>
 
