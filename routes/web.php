@@ -27,12 +27,9 @@ Route::get('/register', function () {
 })->name('user.register');
 
 Route::get('/berita', function () {
-    return view('users.berita.index');
+    return view('users.berita.tidakperlu');
 })->name('user.berita.index');
 
-Route::get('/test', function () {
-    return view('Berita.test');
-});
 Route::get('/pengajuan', function () {
     return view('users.pengajuan.index');
 });
