@@ -28,17 +28,8 @@ echo ================================
 
 call npm run build
 
-echo.
-echo ================================
-echo             APP_KEY
-echo ================================
-
-set /P "app_key=APP_KEY: "
-
 call cp ./.env.example .env
-call sed -i '0,/APP_KEY=/{s/APP_KEY=/APP_KEY=%app_key%/}' .env
+call php artisan key:generate
 
 echo.
-echo Application key applied.
-echo.
-echo Application initialized, you can delete ./initialize.bat file.
+echo Application key generated

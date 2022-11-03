@@ -1,5 +1,5 @@
 <div class="d-flex align-items-center justify-content-between">
-    <a href="{{ route('admins.dashboard') }}" class="logo d-flex align-items-center">
+    <a href="{{ route('admin.dashboard') }}" class="logo d-flex align-items-center">
         <img src="{{ Vite::image('logo.png') }}" alt="">
         <span class="d-none d-lg-block">{{ env('APP_NAME', 'NiceAdmin') }}</span>
     </a>
@@ -159,7 +159,8 @@
         <li class="nav-item dropdown pe-3">
 
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                <img src="{{ Vite::image('profile-img.jpg') }}" alt="Profile" class="rounded-circle">
+                <img src="{{ Auth::user()->getFirstMedia('profile-images') != null? Auth::user()->getFirstMedia('profile-images')->getUrl(): Vite::image('profile-picture-placeholder.png') }}"
+                    alt="Profile" class="rounded-circle">
                 <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
             </a><!-- End Profile Iamge Icon -->
 
@@ -172,7 +173,7 @@
                     <hr class="dropdown-divider">
                 </li>
 
-                <li>
+                {{-- <li>
                     <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
                         <i class="bi bi-person"></i>
                         <span>My Profile</span>
@@ -180,10 +181,10 @@
                 </li>
                 <li>
                     <hr class="dropdown-divider">
-                </li>
+                </li> --}}
 
                 <li>
-                    <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                    <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.dashboard.profile') }}">
                         <i class="bi bi-gear"></i>
                         <span>Account Settings</span>
                     </a>
@@ -192,7 +193,7 @@
                     <hr class="dropdown-divider">
                 </li>
 
-                <li>
+                {{-- <li>
                     <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
                         <i class="bi bi-question-circle"></i>
                         <span>Need Help?</span>
@@ -200,10 +201,10 @@
                 </li>
                 <li>
                     <hr class="dropdown-divider">
-                </li>
+                </li> --}}
 
                 <li>
-                    <form action="{{ route('users.logout') }}" method="POST">
+                    <form action="{{ route('user.logout') }}" method="POST">
                         @csrf
                         <button type="submit" class="dropdown-item d-flex align-items-center"><i
                                 class="bi bi-box-arrow-right"></i>Sign

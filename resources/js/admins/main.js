@@ -4,24 +4,25 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+import "datatables.net-bs5/css/dataTables.bootstrap5.min.css";
+import "datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css";
+import 'datatables.net-select-bs5/css/select.bootstrap5.css';
+import 'datatables.net-responsive-bs5/css/responsive.bootstrap5.css';
 import '../../sass/admins/main.scss'
 import '../../css/admins/style.css'
 
 import ApexCharts from 'apexcharts';
-import * as simpleDatatables from 'simple-datatables';
 import * as echarts from 'echarts';
+import 'laravel-datatables-vite';
+
 import 'chart.js';
 import 'quill';
 import 'tinymce';
-
 window.echarts = echarts
 window.ApexCharts = ApexCharts;
-window.simpleDatatables = simpleDatatables;
-
 
 (function () {
     "use strict";
-
     /**
      * Easy selector helper function
      */
@@ -311,14 +312,6 @@ window.simpleDatatables = simpleDatatables;
         })
 
     /**
-     * Initiate Datatables
-     */
-    const datatables = select('.datatable', true)
-    datatables.forEach(datatable => {
-        new simpleDatatables.DataTable(datatable);
-    })
-
-    /**
      * Autoresize echart charts
      */
     const mainContainer = select('#main');
@@ -331,4 +324,46 @@ window.simpleDatatables = simpleDatatables;
             }).observe(mainContainer);
         }, 200);
     }
+
+    // Custom script
+    var modalElement = document.getElementById('modal')
+    var modalTitleElement = $(modalElement).find('.modal-title');
+    var modalBodyElement = $(modalElement).find('.modal-body');
+    var modalFooterElement = $(modalElement).find('.modal-footer');
+    var modalCancelAction = modalFooterElement.find('button:first-child');
+    var modalSubmitAction = modalFooterElement.find('button:not(:first-child)');
+
+    function setModal(title, body, type) {
+        modalTitleElement.text(title);
+        modalBodyElement.html(body)
+        if (type == 'yesno') {
+            modalCancelAction.removeClass('btn-secondary')
+            modalCancelAction.addClass('btn-danger')
+            modalSubmitAction.removeClass('btn-primary')
+            modalSubmitAction.addClass('btn-success')
+            modalCancelAction.text("No");
+            modalSubmitAction.text('Yes')
+        }
+    }
+
+    function resetModal() {
+        modalCancelAction.removeClass('btn-primary btn-secondary btn-success btn-warning btn-danger btn-info btn-light btn-dark')
+        modalCancelAction.addClass('btn-secondary')
+        modalSubmitAction.removeClass('btn-primary btn-secondary btn-success btn-warning btn-danger btn-info btn-light btn-dark')
+        modalSubmitAction.addClass('btn-success')
+        modalSubmitAction.text('Submit')
+    }
+
+    function getModal() {
+        return new bootstrap.Modal($('#modal'));
+    }
+
+    modalElement.addEventListener('hidden.bs.modal', function () {
+        resetModal();
+    });
+
+    window.setModal = setModal
+    window.resetModal = resetModal
+    window.getModal = getModal
+
 })();

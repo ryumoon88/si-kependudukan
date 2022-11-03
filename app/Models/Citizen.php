@@ -9,6 +9,14 @@ class Citizen extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'date_of_birth' => 'datetime',
+    ];
+
+    protected $with = [
+        'user'
+    ];
+
     public function user()
     {
         return $this->hasOne(User::class);
