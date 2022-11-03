@@ -16,7 +16,6 @@
                             Month</a></li>
                     <li><a class="dropdown-item" href="">This
                             Year</a></li>
-                    <li><a class="dropdown-item" href="">All</a></li>
                 </ul>
             </div>
             <div class="card-body">

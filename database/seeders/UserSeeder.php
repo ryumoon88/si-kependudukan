@@ -25,8 +25,8 @@ class UserSeeder extends Seeder
         ]);
         $user->assignRole($super_admin);
 
-        for ($i = 2; $i <= 500; $i++) {
-            User::factory()->create(['citizen_id' => $i]);
-        }
+        // for ($i = 2; $i <= 500; $i++) {
+        //     User::factory()->create(['citizen_id' => $i]);
+        // }
     }
 }

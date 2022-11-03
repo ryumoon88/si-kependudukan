@@ -13,6 +13,10 @@ class Citizen extends Model
         'date_of_birth' => 'datetime',
     ];
 
+    protected $with = [
+        'user'
+    ];
+
     public function user()
     {
         return $this->hasOne(User::class);

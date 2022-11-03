@@ -31,7 +31,7 @@ class CitizensDataTable extends DataTable
                 return isset($data->user) ? $data->user->toArray() : ['phone_number' => '-'];
             })
             ->addColumn('action', function ($data) {
-                dd($data);
+
                 return '<a class="btn btn-primary btn-sm" href="' . route('admin.dashboard.citizen.show', $data?->id_number, false) . '">Details</a>';
             })
             ->addColumn('status', function ($data) {
@@ -40,9 +40,14 @@ class CitizensDataTable extends DataTable
                 return '<span class="badge rounded-pill text-bg-' . ($registered ? 'success' : 'warning') . '">' . ($registered ? 'Registered' : 'Unregistered') . '</span>';
             })
             ->rawColumns(['status', 'action'])
-            ->orderColumn('users.phone_number', 'users.phone_number $1')
+            ->orderColumn('users.phone_number', function ($query, $order) {
+                $query->orderByRaw("(IF(users.citizen_id IS NULL, '-', users.phone_number)) $order");
+            })
             ->orderColumn('name', 'CONCAT(first_name, " ", last_name) $1')
             ->orderColumn('status', '(SELECT id FROM users WHERE id = citizens.id) $1')
+            ->filterColumn('name', function ($query, $keyword) {
+                $query->whereRaw("CONCAT(first_name,' ',last_name) LIKE ?", ["%{$keyword}%"]);
+            })
             ->filterColumn('user.phone_number', function ($query, $keyword) {
                 $sql = "(SELECT phone_number FROM users WHERE citizen_id = citizens.id) LIKE ?";
                 $query->with('user')->whereRaw($sql, ["%{$keyword}%"]);
@@ -57,7 +62,7 @@ class CitizensDataTable extends DataTable
      */
     public function query(Citizen $model): QueryBuilder
     {
-        $model = $model->with('user')->select();
+        $model = $model->withExists('user');
         return $model->newQuery();
     }
 
@@ -72,7 +77,7 @@ class CitizensDataTable extends DataTable
             ->setTableId('citizens-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->orderBy(1, 'asc')->selectInfo(false)
+            ->orderBy(0, 'asc')->selectInfo(false)
             ->selectStyleSingle();
         // ->buttons([
         //     Button::make('excel'),

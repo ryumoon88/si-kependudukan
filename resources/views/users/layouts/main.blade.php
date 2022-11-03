@@ -21,14 +21,17 @@
     <link rel="stylesheet" href="/css/users/style.css">
 
     @vite(['resources/js/app.js', 'resources/js/users/main.js'])
-
     @stack('css')
 </head>
 
 <body>
-
     <!-- ======= Header ======= -->
+<<<<<<< HEAD
     <header id="header" class="fixed-top d-flex align-items-center  ">
+=======
+    <header id="header"
+        class="fixed-top d-flex align-items-center  header-transparent @if (Route::is('user.login')) header-scrolled @endif">
+>>>>>>> b78a9e3f71da185d2a51eb774f21ca196f2b6943
         @include('users.layouts.header')
     </header><!-- End Header -->
 

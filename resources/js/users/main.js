@@ -98,11 +98,11 @@ window.AOS = AOS;
         const headerScrolled = () => {
             if (window.scrollY > 100) {
                 selectHeader.classList.add('header-scrolled')
-            } else {
+            } else if (window.location.href != 'http://si-kependudukan.test/login') {
                 selectHeader.classList.remove('header-scrolled')
             }
+            console.log(window.location.href)
         }
-        window.addEventListener('load', headerScrolled)
         onscroll(document, headerScrolled)
     }
 
