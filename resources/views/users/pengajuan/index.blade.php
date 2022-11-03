@@ -76,7 +76,15 @@
                     <h6>1. Surat Keteragan Perekaman atau Foto KTP El (rusak/patah/tidak terbaca)<br><br>
                         2. Kartu Keluarga (Jika Kartu Keluarga tidak ada, silahkan ajukan pelayanan Kartu Keluarga
                         (Hilang/Rusak) terlebih dahulu).<br><br>
-                        3. Surat Keterangan Hilang dari Kepolisian (Jika Surat Keterangan Perekaman / KTP-EL lama)</h6>
+                        3. Surat Keterangan Hilang dari Kepolisian (Jika Surat Keterangan Perekaman / KTP-EL lama)
+                        4. Surat Keteragan Perekaman atau Foto KTP El (rusak/patah/tidak terbaca)<br><br>
+                        5. Kartu Keluarga (Jika Kartu Keluarga tidak ada, silahkan ajukan pelayanan Kartu Keluarga
+                        (Hilang/Rusak) terlebih dahulu).<br><br>
+                        6. Surat Keterangan Hilang dari Kepolisian (Jika Surat Keterangan Perekaman / KTP-EL lama)
+                        7. Foto Surat Keteragan atau Foto KTP El (rusak/patah/tidak terbaca)<br><br>
+                        8. Foto Kartu Keluarga<br><br>
+                        9. Surat Keterangan Hilang dari Kepolisian (Jika Surat Keterangan/KTP-EL lama)<br><br>
+                        10. Foto Selpie (Jika pengambilan KTP-El di wakilkan anggota dalam Kartu Keluarga)</h6>
                 </div>
             </div>
             <div class="col">
@@ -111,15 +119,19 @@
 
         <div class="row gx-5">
             <div class="col">
-                <div class="tittle">Formulir</div>
+                <div class="tittle">Status Pengajuan</div>
                 <div class="ket">
-                    <h6>1. Surat Keteragan Perekaman atau Foto KTP El (rusak/patah/tidak terbaca)<br><br>
-                        2. Kartu Keluarga (Jika Kartu Keluarga tidak ada, silahkan ajukan pelayanan Kartu Keluarga
-                        (Hilang/Rusak) terlebih dahulu).<br><br>
-                        3. Surat Keterangan Hilang dari Kepolisian (Jika Surat Keterangan Perekaman / KTP-EL lama)</h6>
+                    <h6>
+                        1. Pengajuan baru | Pemohon melakukan pengajuan layanan<br><br>
+                        3. Pengajuan disetujui | Pengajuan disetujui untuk diproses<br><br>
+                        3. Pengajuan dibatalkan | Pengajuan dibatalkan. Alasan pembatalan dapat dilihat pada histori status
+                        pengajuan<br><br>
+                        4. Pengajuan diproses | Pengajuan sedang dalam proses pengerjaan Status pengerjaan saat ini dapat
+                        dilihat pada histori proses pengerjaan<br><br>
+                        5. Pengajuan selesai | Pengajuan selesai diproses
+                    </h6>
                 </div>
             </div>
-
             <div class="col">
                 <div class="tittle">Isian Pengajuan</div>
                 <div class="ket">
@@ -166,35 +178,6 @@
                 </div>
             </div>
         </div>
-        <div class="row gx-5">
-            <div class="col">
-                <div class="tittle">Dokumen Untuk DiUpload</div>
-                <div class="ket">
-                    <h6>1. Foto Surat Keteragan atau Foto KTP El (rusak/patah/tidak terbaca)<br><br>
-                        2. Foto Kartu Keluarga<br><br>
-                        3. Surat Keterangan Hilang dari Kepolisian (Jika Surat Keterangan/KTP-EL lama)<br><br>
-                        4. Foto Selpie (Jika pengambilan KTP-El di wakilkan anggota dalam Kartu Keluarga)</h6>
-                </div>
-            </div>
-            <div class="col">
-                <div class="tittle">Status Pengajuan</div>
-                <div class="ket">
-                    <h6>
-                        1. Pengajuan baru | Pemohon melakukan pengajuan layanan<br><br>
-                        3. Pengajuan disetujui | Pengajuan disetujui untuk diproses<br><br>
-                        3. Pengajuan dibatalkan | Pengajuan dibatalkan. Alasan pembatalan dapat dilihat pada histori status
-                        pengajuan<br><br>
-                        4. Pengajuan diproses | Pengajuan sedang dalam proses pengerjaan Status pengerjaan saat ini dapat
-                        dilihat pada histori proses pengerjaan<br><br>
-                        5. Pengajuan selesai | Pengajuan selesai diproses
-                    </h6>
-                </div>
-            </div>
-        </div>
-
-
-
-    </div>
     </div>
 @endsection
 @push('js')

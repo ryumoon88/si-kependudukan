@@ -1,4 +1,18 @@
 @extends('users.layouts.main')
+@push('css')
+    <style>
+        .berita .box {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+        }
+
+        .berita .box p {
+            height: 100%;
+        }
+    </style>
+@endpush
 @section('content')
     <!-- ======= About Section ======= -->
     <section id="about" class="about">

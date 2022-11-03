@@ -91,7 +91,7 @@
                         <!-- Submit button -->
                         <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button><br>
                         <div class="text-center">
-                            <p>Not a member? <a href="/Register">Register</a></p>
+                            <p>Not a member? <a href="/register">Register</a></p>
                         </div>
                     </form>
                 </div>
