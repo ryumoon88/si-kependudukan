@@ -25,6 +25,9 @@ Route::get('/Berita', function () {
 Route::get('/test', function () {
     return view('Berita.test');
 });
+Route::get('/pengajuan', function () {
+    return view('Pengajuan.index');
+});
 Route::middleware('web')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('users.index');
 });

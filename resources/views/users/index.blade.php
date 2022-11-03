@@ -190,7 +190,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="icon-box" data-aos="zoom-in-left">
                         <div class="icon"><i class="bi bi-briefcase" style="color: #ff689b;"></i></div>
-                        <h4 class="title"><a href="">Penerbitan KTP</a></h4>
+                        <h4 class="title"><a href="/pengajuan">Penerbitan KTP</a></h4>
                         <p class="description">Layanan penerbitan dokumen KTP-El bagi yang belum pernah memiliki
                             KTP El (baru perekaman), hilang atau rusak/patah/tidak terbaca.
                             Layanan ini tanpa PERUBAHAN DATA PADA ELEMEN KTP-El. Jika sudah selesai dicetak KTP El
