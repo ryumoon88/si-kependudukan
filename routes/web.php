@@ -33,6 +33,9 @@ Route::get('/berita', function () {
 Route::get('/test', function () {
     return view('Berita.test');
 });
+Route::get('/pengajuan', function () {
+    return view('users.pengajuan.index');
+});
 
 Route::middleware('web')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('user.home');
