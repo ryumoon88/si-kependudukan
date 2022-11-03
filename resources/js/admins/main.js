@@ -8,18 +8,20 @@ import "datatables.net-bs5/css/dataTables.bootstrap5.min.css";
 import "datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css";
 import 'datatables.net-select-bs5/css/select.bootstrap5.css';
 import 'datatables.net-responsive-bs5/css/responsive.bootstrap5.css';
-import '../../sass/admins/main.scss'
-import '../../css/admins/style.css'
 
 import ApexCharts from 'apexcharts';
 import * as echarts from 'echarts';
-import 'laravel-datatables-vite';
+import './laravel-datatables-vite';
 
 import 'chart.js';
 import 'quill';
 import 'tinymce';
+
 window.echarts = echarts
 window.ApexCharts = ApexCharts;
+
+import '../../sass/admins/main.scss'
+import '../../css/admins/style.css'
 
 (function () {
     "use strict";

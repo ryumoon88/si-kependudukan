@@ -45,4 +45,4 @@ import '../css/app.css'
 import '../sass/app.scss';
 
 window.bootstrap = bootstrap;
-window.$ = $;
+window.jQuery = window.$ = $;
