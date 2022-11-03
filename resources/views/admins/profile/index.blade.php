@@ -4,10 +4,9 @@
         <div class="row">
             <div class="col-xl-4">
                 <div class="card">
-
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-                        <img data-old="{{ Auth::user()->getFirstMedia('profile-images') != null? Auth::user()->getFirstMedia('profile-images')->getUrl(): Vite::image('profile-picture-placeholder.png') }}"
-                            src="{{ Auth::user()->getFirstMedia('profile-images') != null? Auth::user()->getFirstMedia('profile-images')->getUrl(): Vite::image('profile-picture-placeholder.png') }}"
+                        <img data-old="{{ Auth::user()->getFirstMedia('profile-images') != null ? Auth::user()->getFirstMedia('profile-images')->getUrl() : Vite::image('profile-picture-placeholder.png') }}"
+                            src="{{ Auth::user()->getFirstMedia('profile-images') != null ? Auth::user()->getFirstMedia('profile-images')->getUrl() : Vite::image('profile-picture-placeholder.png') }}"
                             alt="Profile" class="rounded-circle profile-img-preview shadow">
                         <h2>{{ Auth::user()->get_name() }}</h2>
                         <h3>{{ Auth::user()->roles()->first()->name }}</h3>
