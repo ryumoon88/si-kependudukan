@@ -26,13 +26,14 @@ Route::get('/register', function () {
     return view('users.register.index');
 })->name('user.register');
 
+// Route::get('/berita', function () {
+//     return view('users.berita.index');
+// })->name('user.berita.index');
+
 Route::get('/berita', function () {
-    return view('users.berita.index');
+    return view('users.berita.perlu');
 })->name('user.berita.index');
 
-Route::get('/test', function () {
-    return view('Berita.test');
-});
 Route::get('/pengajuan', function () {
     return view('users.pengajuan.index');
 });

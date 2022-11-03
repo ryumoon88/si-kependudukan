@@ -112,9 +112,9 @@
     </style>
 @endpush
 @section('content')
-    <section class="vh-100 gradient-custom">
-        <div class="container py-5 h-100">
-            <div class="row justify-content-center align-items-center h-100">
+    <section class=" gradient-custom">
+        <div class="container py-5 ">
+            <div class="row justify-content-center align-items-center ">
                 <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                     <div class="header">
                         <div class="container">
