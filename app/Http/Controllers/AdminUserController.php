@@ -28,7 +28,8 @@ class AdminUserController extends Controller
         ]);
 
         if ($request->get('remove-image') == 'true') {
-            $user->getFirstMedia('profile-image')?->delete();
+            dd($user->getFirstMedia('profile-images'));
+            $user->getFirstMedia('profile-images')?->delete();
         }
 
         if ($request->hasFile('image')) {

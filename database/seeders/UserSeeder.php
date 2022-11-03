@@ -32,6 +32,14 @@ class UserSeeder extends Seeder
         ]);
         $user->assignRole($super_admin);
 
+        $user = User::factory()->create([
+            'id_number' => '1370000000000002',
+            'citizen_id' => 2,
+            'phone_number' => '02981365123232',
+            'email' => 'jilhanhaura@gmail.com'
+        ]);
+        $user->assignRole($super_admin);
+
         // for ($i = 2; $i <= 500; $i++) {
         //     User::factory()->create(['citizen_id' => $i]);
         // }

@@ -296,14 +296,14 @@
             </div>
 
             <div class="row">
-
                 <div class="col-lg-3 col-md-6">
                     <div class="box" data-aos="zoom-in">
                         <h3>
                             Pekan Dukcapil 2022 Dibanjiri Masyarakat</h3>
                         <img
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSACoB1BvrHMpMmawL4eZlDZK7--6MblgD2wQ&usqp=CAU">
-                        <p>Kegiatan Pekan Dukcapil Sumatera Barat 2022 mendapat sambutan positif dari masyarakat,
+                        <p>Kegiatan Pekan Dukcapil Sumatera Barat 2022 mendapat sambutan positif dari
+                            masyarakat,
                             ini terlihat dari ramainya warga mendatangi kegiatan yang diadakan di Kantor Gubernur
                             Sumatra Barat, Selasa (4/10/2022).</p>
                         <div class="btn-wrap">
