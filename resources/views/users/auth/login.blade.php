@@ -30,11 +30,7 @@
 
         header {
             z-index: 2;
-<<<<<<< HEAD
-            background: rgba(42, 44, 57, 0.9);
-=======
             background-color: #000
->>>>>>> b78a9e3f71da185d2a51eb774f21ca196f2b6943
         }
 
         .divider:after,
