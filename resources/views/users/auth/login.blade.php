@@ -30,6 +30,7 @@
 
         header {
             z-index: 2;
+            background: rgba(42, 44, 57, 0.9);
         }
 
         .divider:after,
@@ -88,7 +89,10 @@
                         </div>
 
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button><br>
+                        <div class="text-center">
+                            <p>Not a member? <a href="/Register">Register</a></p>
+                        </div>
                     </form>
                 </div>
             </div>
