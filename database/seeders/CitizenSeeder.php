@@ -36,7 +36,7 @@ class CitizenSeeder extends Seeder
             'marital_status' => 'Single',
             'religion' => 'Islam',
             'place_of_birth' => 'Indonesia',
-            'date_of_birth' => '1900-01-01',
+            'date_of_birth' => '1900-01-02',
             'blood_type' => 'A'
         ]);
 

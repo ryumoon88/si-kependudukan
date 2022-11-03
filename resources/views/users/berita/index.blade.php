@@ -38,21 +38,21 @@
         }
 
         /* .container {
-                padding: 20px;
-                text-align: center;
-            }
+                                                    padding: 20px;
+                                                    text-align: center;
+                                                }
 
-            .container .text {
-                font-size: 35px;
-                color: bal;
-                text-shadow: 2px 2px 2px black;
-                margin-top: 40px;
-                padding: 5px 10px 5px 10px;
-            }
+                                                .container .text {
+                                                    font-size: 35px;
+                                                    color: bal;
+                                                    text-shadow: 2px 2px 2px black;
+                                                    margin-top: 40px;
+                                                    padding: 5px 10px 5px 10px;
+                                                }
 
-            .container .logo img {
-                width: 200px;
-            } */
+                                    .container .logo img {
+                                        width: 200px;
+                                    } */
 
         /*Bagian Menu*/
 

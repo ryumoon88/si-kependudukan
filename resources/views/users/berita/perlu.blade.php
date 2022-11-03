@@ -10,7 +10,7 @@
         .header {
             width: 100%;
             /* background-color: gray; */
-            background-image: url("https://source.unsplash.com/800x200?web");
+            background-image: url("https://source.unsplash.com/800x200?mobile");
             background-size: cover;
         }
 
@@ -28,9 +28,6 @@
         .container .logo img {
             width: 200px;
         }
-
-
-
 
         .isi {
             width: 100%;
@@ -112,9 +109,9 @@
     </style>
 @endpush
 @section('content')
-    <section class=" gradient-custom">
+    <section class="gradient-custom">
         <div class="container py-5 ">
-            <div class="row justify-content-center align-items-center ">
+            <div class="row justify-content-center align-items-center">
                 <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                     <div class="header">
                         <div class="container">
@@ -141,7 +138,7 @@
 
                                     <br>
                                     <div class="tombol">
-                                        <a href="#" class="btn">Baca Selengkapnya</a>
+                                        <a href="#" class="btn">Read More</a>
                                     </div>
                                 </div>
                                 <br>
@@ -155,7 +152,7 @@
                         <div class="isinya">
                             <div class="col3">
                                 <div class="judul">Kadis Dukcapil Padang Ajak Warga Manfaatkan Pekan Dukcapil</div>
-                                <div class="tanggal">Penulis : Naufal Hady| Tanggal : 03 November 2022</div>
+                                <div class="tanggal">Penulis : Naufal Hady | Tanggal : 03 November 2022</div>
                                 <div class="gambar"><img src="https://source.unsplash.com/800x200?web" alt="">
                                 </div>
                                 <div class="isiberita">
@@ -166,7 +163,7 @@
 
                                     <br>
                                     <div class="tombol">
-                                        <a href="#" class="btn">Baca Selengkapnya</a>
+                                        <a href="#" class="btn">Read More</a>
                                     </div>
                                 </div> <br>
                                 <br>
@@ -190,7 +187,80 @@
 
                                     <br>
                                     <div class="tombol">
-                                        <a href="#" class="btn">Baca Selengkapnya</a>
+                                        <a href="#" class="btn">Read More</a>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="tag">
+                                    KELOMPOK 4 | Sistem Informasi Kependudukan
+                                </div>
+                            </div>
+                        </div>
+                        <div class="isinya">
+                            <div class="col3">
+                                <div class="judul">Pekan Dukcapil 2022 Dibanjiri Masyarakat</div>
+                                <div class="tanggal">Penulis : Jilhan Haura | Tanggal : 03 November 2022</div>
+                                <div class="gambar"><img src="https://source.unsplash.com/800x200?web" alt="">
+                                </div>
+                                <div class="isiberita">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure
+
+                                    <br>
+                                    <div class="tombol">
+                                        <a href="#" class="btn">Read More</a>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="tag">
+                                    KELOMPOK 4 | Sistem Informasi Kependudukan
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="isinya">
+                            <div class="col3">
+                                <div class="judul">Kadis Dukcapil Padang Ajak Warga Manfaatkan Pekan Dukcapil</div>
+                                <div class="tanggal">Penulis : Naufal Hady | Tanggal : 03 November 2022</div>
+                                <div class="gambar"><img src="https://source.unsplash.com/800x200?web" alt="">
+                                </div>
+                                <div class="isiberita">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure
+
+                                    <br>
+                                    <div class="tombol">
+                                        <a href="#" class="btn">Read More</a>
+                                    </div>
+                                </div> <br>
+                                <br>
+                                <div class="tag">
+                                    KELOMPOK 4 | Sistem Informasi Kependudukan
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="isinya">
+                            <div class="col3">
+                                <div class="judul">Wako Padang Serahkan KTP Pemula Bagi Pelajar SMAN 1</div>
+                                <div class="tanggal">Penulis : Nelly Sintia | Tanggal : 03 November 2022</div>
+                                <div class="gambar"><img src="https://source.unsplash.com/800x200?web" alt="">
+                                </div>
+                                <div class="isiberita">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure
+
+                                    <br>
+                                    <div class="tombol">
+                                        <a href="#" class="btn">Read More</a>
                                     </div>
                                 </div>
                                 <br>
