@@ -22,12 +22,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/Register', function () {
-    return view('Register.index');
-});
-Route::get('/Berita', function () {
-    return view('Berita.index');
-});
+Route::get('/register', function () {
+    return view('users.register.index');
+})->name('user.register');
+Route::get('/berita', function () {
+    return view('users.berita.index');
+})->name('user.berita.index');
 Route::get('/test', function () {
     return view('Berita.test');
 });
