@@ -22,6 +22,15 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Route::get('/Register', function () {
+    return view('Register.index');
+});
+Route::get('/Berita', function () {
+    return view('Berita.index');
+});
+Route::get('/test', function () {
+    return view('Berita.test');
+});
 Route::middleware('web')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('user.home');
 });
