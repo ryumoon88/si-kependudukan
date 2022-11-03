@@ -18,9 +18,12 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->name(),
+            'id_number' => fake()->bothify('137000##########'),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'about' => fake()->paragraph(6),
             'remember_token' => Str::random(10),
+            'phone_number' => fake()->phoneNumber(),
+            'email' => fake()->safeEmail(),
         ];
     }
 

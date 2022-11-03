@@ -24,34 +24,11 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-
         $this->call([
-            PermissionSeeder::class
-        ]);
-        $user = User::factory()->create([
-            'name' => "Naufal Hady",
-            'username' => 'ryumoon'
-        ]);
-
-        $user->assignRole(Role::findByName('Super-Admin', 'admin'));
-
-        $user = User::factory()->create([
-            'name' => 'Tsalsabila Jilhan Haura',
-            'username' => 'jilhan'
-        ]);
-
-        $user->assignRole(Role::findByName('Super-Admin', 'admin'));
-
-        $user = User::factory()->create([
-            'name' => 'Nelly Sintia Yanti',
-            'username' => 'sintia'
-        ]);
-
-        $user->assignRole(Role::findByName('Super-Admin', 'admin'));
-
-        User::factory()->create([
-            'name' => 'Pavao Slavco',
-            'username' => 'test_user'
+            PermissionSeeder::class,
+            VisitorSeeder::class,
+            CitizenSeeder::class,
+            UserSeeder::class
         ]);
     }
 }

@@ -1,9 +1,15 @@
 <?php
 
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\CitizenController;
+use App\Http\Controllers\CitizenDashboardController;
+use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,52 +22,52 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/Register', function () {
-    return view('Register.index');
-});
-Route::get('/Berita', function () {
-    return view('Berita.index');
-});
+Route::get('/register', function () {
+    return view('users.register.index');
+})->name('user.register');
+
+Route::get('/berita', function () {
+    return view('users.berita.index');
+})->name('user.berita.index');
+
 Route::get('/test', function () {
     return view('Berita.test');
 });
 Route::get('/pengajuan', function () {
-    return view('Pengajuan.index');
+    return view('users.pengajuan.index');
 });
+
 Route::middleware('web')->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('users.index');
+    Route::get('/', [HomeController::class, 'index'])->name('user.home');
 });
 
 Route::middleware('guest')->group(function () {
-    Route::get('/login', [LoginController::class, 'login'])->name('users.login');
-    Route::post('/login', [LoginController::class, 'authenticate'])->name('users.authenticate');
+    Route::get('/login', [LoginController::class, 'login'])->name('user.login');
+    Route::post('/login', [LoginController::class, 'authenticate'])->name('user.authenticate');
 });
 
-Route::middleware('auth')->group(function () {
-    Route::post('/logout', [LoginController::class, 'logout'])->name('users.logout');
-});
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('/logout', [LoginController::class, 'logout'])->name('user.logout');
 
-// Route::prefix('admin')->group(function () {
-//     Route::middleware('auth', 'role:Super-Admin|Admin')->group(function () {
-//         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admins.dashboard');
-//         Route::get('/citizens', [AdminDashboardController::class, 'citizens'])->name('admins.citizens');
-//     });
-// });
+    Route::group(['prefix' => 'uploads'], function () {
+        Route::post('/file', [FileController::class, 'upload_temp'])->name('upload.file');
+    });
 
-Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
+    Route::group(['middleware' => ['admin'], 'prefix' => 'a'], function () {
+        Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
-    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admins.dashboard');
+        Route::group(['prefix' => 'dashboard'], function () {
+            Route::get('/citizens', [CitizenDashboardController::class, 'index'])->name('admin.dashboard.citizen');
+            Route::group(['prefix' => 'citizens'], function () {
+                Route::get('/{citizen:id_number}', [CitizenDashboardController::class, 'show'])->name('admin.dashboard.citizen.show');
+            });
 
-    Route::group(['prefix' => 'dashboard'], function () {
-        Route::get('/citizens', [AdminDashboardController::class, 'citizens'])->name('admins.citizens');
+            Route::get('/profile', [AdminUserController::class, 'index'])->name('admin.dashboard.profile');
+
+            Route::group(['prefix' => 'profile'], function () {
+                Route::put('/update/{user:id_number}', [AdminUserController::class, 'update'])->name('admin.dashboard.profile.update');
+                Route::post('/change-password', [AdminUserController::class, 'change_password'])->name('admin.dashboard.profile.change-password');
+            });
+        });
     });
 });
-
-
-// Route::get('/admin/dashboard', function () {
-//     return view('admins.index');
-// })->name('admins.dashboard');
-
-// Route::get('/admin/dashboard/citizens', function () {
-//     return view('admins.citizens.index');
-// })->name('admins.citizens');

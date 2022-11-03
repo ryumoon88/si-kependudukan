@@ -16,10 +16,14 @@
         rel="stylesheet">
 
     @vite(['resources/js/app.js', 'resources/js/admins/main.js'])
+
+    @stack('styles')
 </head>
 
 <body>
-
+    @php
+        isset($sided) ? $sided : ($sided = true);
+    @endphp
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
         @include('admins.layouts.header')
@@ -31,12 +35,23 @@
     </aside><!-- End Sidebar-->
 
     <main id="main" class="main">
+        @if (session('alert') != null)
+            <div class="alert alert-{{ session('alert')['type'] }} alert-dismissible fade show" role="alert">
+                <i
+                    class="bi {{ isset(session('alert')['class']) ? session('alert')['class'] : 'bi-check-circle' }} me-1"></i>
+                {{ session('alert')['message'] }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         <div class="pagetitle">
             {{ Breadcrumbs::render() }}
         </div><!-- End Page Title -->
-        @yield('content')
+        @if ($sided)
+            @include('admins.layouts.content-with-side')
+        @else
+            @include('admins.layouts.content-without-side')
+        @endif
     </main><!-- End #main -->
-
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         @include('admins.layouts.footer')
@@ -44,6 +59,27 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
+    <!-- Vertically centered modal -->
+    <div class="modal fade" id="modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @stack('scripts')
 </body>
 
 </html>

@@ -1,17 +1,17 @@
 <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-        <a class="nav-link {{ Str::endsWith(url()->current(), 'dashboard') ? '' : 'collapsed' }}"
-            href="{{ route('admins.dashboard') }}">
+        <a class="nav-link {{ Route::is('admin.dashboard') ? '' : 'collapsed' }}" href="{{ route('admin.dashboard') }}">
             <i class="bi bi-grid"></i>
             <span>Dashboard</span>
         </a>
     </li><!-- End Dashboard Nav -->
     <li class="nav-item">
-        <a href="{{ route('admins.citizens') }}"
-            class="nav-link {{ Str::endsWith(url()->current(), 'citizens') ? '' : 'collapsed' }}">
+        <a href="{{ route('admin.dashboard.citizen') }}"
+            class="nav-link {{ Route::is('admin.dashboard.citizen*') ? '' : 'collapsed' }}">
             <i class="bi bi-people-fill"></i>
             <span>Citizens</span>
+
         </a>
     </li>
 
