@@ -18,3 +18,4 @@ yarn-error.log
 /.vscode
 resources/views/testing/*
 storage/clockwork/*
+.editorconfig

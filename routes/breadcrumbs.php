@@ -21,3 +21,8 @@ Breadcrumbs::for('admin.dashboard.profile', function (BreadcrumbTrail $trail) {
     $trail->parent('admin.dashboard');
     $trail->push('Profile', route('admin.dashboard.profile'));
 });
+
+Breadcrumbs::for('admin.dashboard.submission', function (BreadcrumbTrail $trail) {
+    $trail->parent('admin.dashboard');
+    $trail->push('Submissions');
+});

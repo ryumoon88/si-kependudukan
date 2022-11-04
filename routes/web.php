@@ -8,6 +8,7 @@ use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SubmissionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -68,6 +69,10 @@ Route::group(['middleware' => ['auth']], function () {
             Route::group(['prefix' => 'profile'], function () {
                 Route::put('/update/{user:id_number}', [AdminUserController::class, 'update'])->name('admin.dashboard.profile.update');
                 Route::post('/change-password', [AdminUserController::class, 'change_password'])->name('admin.dashboard.profile.change-password');
+            });
+
+            Route::group(['prefix' => 'submissions'], function () {
+                Route::get('/kartu-tanda-penduduk', [SubmissionController::class, 'index'])->name('admin.dashboard.submission');
             });
         });
     });
