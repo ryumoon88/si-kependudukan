@@ -36,7 +36,7 @@ class AdminDashboardController extends Controller
             return date('Y-m-d', $item->date->timestamp) == now()->format('Y-m-d');
         });
         $thisDayVisitorsCount = $thisDayVisitors->count();
-        $dailyVisitorPercentage = round((($thisDayVisitorsCount - $lastDayVisitors->count()) / $lastDayVisitors->count() * 100), 2);
+        $dailyVisitorPercentage = round((($thisDayVisitorsCount - $lastDayVisitors->count()) / ($lastDayVisitors->count() == 0 ? 1 : $lastDayVisitors->count()) * 100), 2);
         #endregion Visitors
 
         #region Submissions
