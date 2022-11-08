@@ -13,7 +13,7 @@
                 </div>
                 <p class="animate__animated fanimate__adeInUp">Sistem Informasi Administrasi Kependudukan adalah
                     sebuah sistem yang bisa menampilkan data dan memberi berbagai fitur layananan
-                    bagi pengguna yang memerlukan.{{ now() }}
+                    bagi pengguna yang memerlukan.
                 </p>
                 <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
             </div>

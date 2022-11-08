@@ -11,9 +11,46 @@
             class="nav-link {{ Route::is('admin.dashboard.citizen*') ? '' : 'collapsed' }}">
             <i class="bi bi-people-fill"></i>
             <span>Citizens</span>
-
         </a>
     </li>
+    <li class="nav-item">
+        <a href="" class="nav-link {{ Route::is('admin.dashboard.submission*') ? '' : 'collapsed' }}"
+            data-bs-target="#submissions-nav" data-bs-toggle="collapse">
+            <i class="bi bi-book"></i>
+            <span>Submissions</span>
+            <i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="submissions-nav"
+            class="nav-content {{ Route::is('admin.dashboard.submission*') ? '' : 'collapse show' }}"
+            data-bs-parent="#sidebar-nav">
+            <li>
+                <a href="{{ route('admin.dashboard.submission') }}"
+                    class="nav-link {{ Route::is('admin.dashboard.submission*') ? '' : 'collapsed' }}">
+                    <i class="bi bi-circle-fill"></i>
+                    <span>Kartu Tanda Penduduk</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link collapsed">
+                    <i class="bi bi-circle-fill"></i>
+                    <span>Kartu Keluarga</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link collapsed">
+                    <i class="bi bi-circle-fill"></i>
+                    <span>Anak</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link collapsed">
+                    <i class="bi bi-circle-fill"></i>
+                    <span>Surat Keterangan</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
 
     {{-- <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -91,8 +128,8 @@
                 </a>
             </li>
         </ul>
-    </li><!-- End Components Nav -->
-
+    </li><!-- End Components Nav --> --}}
+    {{--
     <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
