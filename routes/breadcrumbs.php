@@ -12,6 +12,11 @@ Breadcrumbs::for('admin.dashboard.citizen', function (BreadcrumbTrail $trail) {
     $trail->push('Citizens', route('admin.dashboard.citizen'));
 });
 
+Breadcrumbs::for('admin.dashboard.citizen.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('admin.dashboard.citizen');
+    $trail->push('Create');
+});
+
 Breadcrumbs::for('admin.dashboard.citizen.show', function (BreadcrumbTrail $trail) {
     $trail->parent('admin.dashboard.citizen');
     $trail->push('Details');

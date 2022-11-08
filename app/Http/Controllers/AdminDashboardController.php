@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\CitizensDataTable;
+use App\Models\Citizen;
 use App\Models\Visitor;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,6 @@ class AdminDashboardController extends Controller
 {
     public function index()
     {
-        #region Visitors
         $visitorsTillLastYear = Visitor::whereBetween('date', [date_sub(now(), date_interval_create_from_date_string('2 years')), now()])->get();
         $yearSeparated = $visitorsTillLastYear->groupBy(function ($item) {
             return $item->date->year;
@@ -37,12 +37,30 @@ class AdminDashboardController extends Controller
         });
         $thisDayVisitorsCount = $thisDayVisitors->count();
         $dailyVisitorPercentage = round((($thisDayVisitorsCount - $lastDayVisitors->count()) / ($lastDayVisitors->count() == 0 ? 1 : $lastDayVisitors->count()) * 100), 2);
-        #endregion Visitors
-
-        #region Submissions
-
-        #endregion
 
         return view('admins.index', compact('thisYearVisitorsCount', 'thisMonthVisitorsCount', 'thisDayVisitorsCount', 'yearlyVisitorPercentage', 'monthlyVisitorPercentage', 'dailyVisitorPercentage'));
+    }
+
+    public function citizens(CitizensDataTable $dataTable)
+    {
+        return $dataTable->render('admins.citizens.index', ['sided' => false]);
+    }
+
+    public function citizens_show(Citizen $citizen)
+    {
+        $sided = false;
+        return view('admins.citizens.show', compact('citizen', 'sided'));
+    }
+
+    public function citizens_create()
+    {
+        $sided = false;
+        return view('admins.citizens.new');
+    }
+
+    public function submissions()
+    {
+        $sided = false;
+        return view('admins.submissions.index', compact('sided'));
     }
 }
