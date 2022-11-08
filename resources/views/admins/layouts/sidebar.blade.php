@@ -21,11 +21,11 @@
             <i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="submissions-nav"
-            class="nav-content {{ Route::is('admin.dashboard.submission*') ? '' : 'collapse show' }}"
+            class="nav-content collapse {{ Route::is('admin.dashboard.submission*') ? 'show' : '' }}"
             data-bs-parent="#sidebar-nav">
             <li>
                 <a href="{{ route('admin.dashboard.submission') }}"
-                    class="nav-link {{ Route::is('admin.dashboard.submission*') ? '' : 'collapsed' }}">
+                    class="nav-link {{ Route::is('admin.dashboard.citizen.show') ? 'collapse' : '' }}">
                     <i class="bi bi-circle-fill"></i>
                     <span>Kartu Tanda Penduduk</span>
                 </a>

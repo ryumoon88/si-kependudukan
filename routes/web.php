@@ -2,13 +2,10 @@
 
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminUserController;
-use App\Http\Controllers\CitizenController;
-use App\Http\Controllers\CitizenDashboardController;
 use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SubmissionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -59,9 +56,10 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
         Route::group(['prefix' => 'dashboard'], function () {
-            Route::get('/citizens', [CitizenDashboardController::class, 'index'])->name('admin.dashboard.citizen');
+            Route::get('/citizens', [AdminDashboardController::class, 'citizens'])->name('admin.dashboard.citizen');
             Route::group(['prefix' => 'citizens'], function () {
-                Route::get('/{citizen:id_number}', [CitizenDashboardController::class, 'show'])->name('admin.dashboard.citizen.show');
+                Route::get('/new', [AdminDashboardController::class, 'citizens_create'])->name('admin.dashboard.citizen.create');
+                Route::get('/{citizen:id_number}', [AdminDashboardController::class, 'citizens_show'])->name('admin.dashboard.citizen.show');
             });
 
             Route::get('/profile', [AdminUserController::class, 'index'])->name('admin.dashboard.profile');
@@ -72,7 +70,7 @@ Route::group(['middleware' => ['auth']], function () {
             });
 
             Route::group(['prefix' => 'submissions'], function () {
-                Route::get('/kartu-tanda-penduduk', [SubmissionController::class, 'index'])->name('admin.dashboard.submission');
+                Route::get('/kartu-tanda-penduduk', [AdminDashboardController::class, 'submissions'])->name('admin.dashboard.submission');
             });
         });
     });
