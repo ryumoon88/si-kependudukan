@@ -12,6 +12,10 @@ import 'datatables.net-responsive-bs5/css/responsive.bootstrap5.css';
 import ApexCharts from 'apexcharts';
 import * as echarts from 'echarts';
 import './laravel-datatables-vite';
+import 'bootstrap-select';
+import 'bootstrap-select/dist/css/bootstrap-select.css';
+
+$.fn.selectpicker.Constructor.BootstrapVersion = '5';
 
 import 'chart.js';
 import 'quill';

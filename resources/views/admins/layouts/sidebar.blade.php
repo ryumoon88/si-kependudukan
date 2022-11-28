@@ -7,25 +7,39 @@
         </a>
     </li><!-- End Dashboard Nav -->
     <li class="nav-item">
-        <a href="{{ route('admin.dashboard.citizen') }}"
-            class="nav-link {{ Route::is('admin.dashboard.citizen*') ? '' : 'collapsed' }}">
-            <i class="bi bi-people-fill"></i>
-            <span>Citizens</span>
+        <a href="" class="nav-link {{ Route::is('admin.dashboard.resident*') ? '' : 'collapsed' }}"
+            data-bs-target="#residents-nav" data-bs-toggle="collapse">
+            <i class="bi bi-people"></i>
+            <span>Residents</span>
+            <i class="bi bi-chevron-down ms-auto"></i>
         </a>
+        <ul id="residents-nav" class="nav-content collapse {{ Route::is('admin.dashboard.resident*') ? 'show' : '' }}"
+            data-bs-parent="#sidebar-nav">
+            <li>
+                <a href="{{ route('admin.dashboard.resident.birth') }}"
+                    class="nav-link {{ Route::is('admin.dashboard.resident.birth*') ? '' : 'collapsed' }}">
+                    <i class="bi bi-circle-fill"></i>
+                    <span>Birth Record</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('admin.dashboard.resident.identity') }}"
+                    class="nav-link {{ Route::is('admin.dashboard.resident.identity*') ? '' : 'collapsed' }}">
+                    <i class="bi bi-circle-fill"></i>
+                    <span>Identity Card</span>
+                </a>
+            </li>
+        </ul>
     </li>
     <li class="nav-item">
-        <a href="" class="nav-link {{ Route::is('admin.dashboard.submission*') ? '' : 'collapsed' }}"
-            data-bs-target="#submissions-nav" data-bs-toggle="collapse">
+        <a href="" class="nav-link collapsed" data-bs-target="#submissions-nav" data-bs-toggle="collapse">
             <i class="bi bi-book"></i>
             <span>Submissions</span>
             <i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="submissions-nav"
-            class="nav-content collapse {{ Route::is('admin.dashboard.submission*') ? 'show' : '' }}"
-            data-bs-parent="#sidebar-nav">
+        <ul id="submissions-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
-                <a href="{{ route('admin.dashboard.submission') }}"
-                    class="nav-link {{ Route::is('admin.dashboard.citizen.show') ? 'collapse' : '' }}">
+                <a href="" class="nav-link">
                     <i class="bi bi-circle-fill"></i>
                     <span>Kartu Tanda Penduduk</span>
                 </a>

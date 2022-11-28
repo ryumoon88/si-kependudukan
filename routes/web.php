@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\AdminDashboardController;
-use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LocationApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,10 +23,6 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/register', function () {
     return view('users.register.index');
 })->name('user.register');
-
-// Route::get('/berita', function () {
-//     return view('users.berita.index');
-// })->name('user.berita.index');
 
 Route::get('/berita', function () {
     return view('users.berita.perlu');
@@ -47,31 +43,13 @@ Route::middleware('guest')->group(function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('user.logout');
-
     Route::group(['prefix' => 'uploads'], function () {
         Route::post('/file', [FileController::class, 'upload_temp'])->name('upload.file');
     });
-
-    Route::group(['middleware' => ['admin'], 'prefix' => 'a'], function () {
-        Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
-
-        Route::group(['prefix' => 'dashboard'], function () {
-            Route::get('/citizens', [AdminDashboardController::class, 'citizens'])->name('admin.dashboard.citizen');
-            Route::group(['prefix' => 'citizens'], function () {
-                Route::get('/new', [AdminDashboardController::class, 'citizens_create'])->name('admin.dashboard.citizen.create');
-                Route::get('/{citizen:id_number}', [AdminDashboardController::class, 'citizens_show'])->name('admin.dashboard.citizen.show');
-            });
-
-            Route::get('/profile', [AdminUserController::class, 'index'])->name('admin.dashboard.profile');
-
-            Route::group(['prefix' => 'profile'], function () {
-                Route::put('/update/{user:id_number}', [AdminUserController::class, 'update'])->name('admin.dashboard.profile.update');
-                Route::post('/change-password', [AdminUserController::class, 'change_password'])->name('admin.dashboard.profile.change-password');
-            });
-
-            Route::group(['prefix' => 'submissions'], function () {
-                Route::get('/kartu-tanda-penduduk', [AdminDashboardController::class, 'submissions'])->name('admin.dashboard.submission');
-            });
-        });
-    });
 });
+
+
+// Route::get('indonesia/province/{province?}', [LocationApi::class, 'province']);
+Route::get('indonesia/city/{province?}', [LocationApi::class, 'city']);
+Route::get('indonesia/district/{city?}', [LocationApi::class, 'district']);
+Route::get('indonesia/village/{district?}', [LocationApi::class, 'village']);

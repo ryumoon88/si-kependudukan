@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Citizen;
+use App\Models\ResidentDeath;
 use Illuminate\Http\Request;
 
-class CitizenController extends Controller
+class ResidentDeathController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +14,7 @@ class CitizenController extends Controller
      */
     public function index()
     {
+        //
     }
 
     /**
@@ -40,10 +41,10 @@ class CitizenController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Citizen  $citizen
+     * @param  \App\Models\ResidentDeath  $residentDeath
      * @return \Illuminate\Http\Response
      */
-    public function show(Citizen $citizen)
+    public function show(ResidentDeath $residentDeath)
     {
         //
     }
@@ -51,10 +52,10 @@ class CitizenController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Citizen  $citizen
+     * @param  \App\Models\ResidentDeath  $residentDeath
      * @return \Illuminate\Http\Response
      */
-    public function edit(Citizen $citizen)
+    public function edit(ResidentDeath $residentDeath)
     {
         //
     }
@@ -63,10 +64,10 @@ class CitizenController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Citizen  $citizen
+     * @param  \App\Models\ResidentDeath  $residentDeath
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Citizen $citizen)
+    public function update(Request $request, ResidentDeath $residentDeath)
     {
         //
     }
@@ -74,10 +75,10 @@ class CitizenController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Citizen  $citizen
+     * @param  \App\Models\ResidentDeath  $residentDeath
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Citizen $citizen)
+    public function destroy(ResidentDeath $residentDeath)
     {
         //
     }

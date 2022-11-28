@@ -32,8 +32,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
 //     enabledTransports: ['ws', 'wss'],
 // });
-
-import * as bootstrap from 'bootstrap';
+import * as bootstrap from 'bootstrap/dist/js/bootstrap.bundle.js';
 import $ from 'jquery';
 
 import 'remixicon/fonts/remixicon.css'

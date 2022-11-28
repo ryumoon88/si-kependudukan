@@ -1296,3 +1296,23 @@ h6 {
 }
 
 /*#endregion Datatable  */
+
+.data-field {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.data-field:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.data-field span {
+    text-align: end;
+}
+
+.card-title span a {
+    color: #899bbd;
+    text-decoration: underline;
+}

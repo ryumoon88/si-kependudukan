@@ -4,8 +4,10 @@
         <div class="card">
             <div class="card-body w-100">
                 <div class="d-flex justify-content-between align-items-center">
-                    <div class="card-title">Citizens</div>
-                    <div><a href="{{ route('admin.dashboard.citizen.create') }}" class="btn btn-primary btn-sm px-3">New</a>
+                    <div class="card-title">Residents</div>
+                    <div><a href="{{ route('admin.dashboard.resident.identity.create') }}"
+                            class="btn btn-primary btn-sm px-3">New</a>
+                        {{-- <div><a href="{{ route('admin.dashboard.resident.create') }}" class="btn btn-primary btn-sm px-3">New</a> --}}
                     </div>
                 </div>
                 {{ $dataTable->table() }}

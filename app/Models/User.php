@@ -46,13 +46,13 @@ class User extends Authenticatable implements HasMedia
         // 'email_verified_at' => 'datetime',
     ];
 
-    public function citizen()
+    public function resident()
     {
-        return $this->belongsTo(Citizen::class);
+        return $this->belongsTo(Resident::class);
     }
 
     public function get_name()
     {
-        return $this->citizen->first_name . ' ' . $this->citizen->last_name;
+        return $this->resident->first_name . ' ' . $this->resident->last_name;
     }
 }
