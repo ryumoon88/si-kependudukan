@@ -4,9 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\User;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
 
 use Laravolt\Indonesia\Seeds\CitiesSeeder;
 use Laravolt\Indonesia\Seeds\VillagesSeeder;
@@ -32,7 +30,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PermissionSeeder::class,
             VisitorSeeder::class,
-            CitizenSeeder::class,
+            ResidentBirthSeeder::class,
+            ResidentSeeder::class,
             UserSeeder::class,
 
             ProvincesSeeder::class,

@@ -22,8 +22,7 @@
             @auth
                 <li class="dropdown"><a href="" type="button"><img src="{{ Vite::image('team/team-3.jpg') }}"
                             alt="" srcset="" style="max-width: 30px;" class="img-fluid rounded-circle me-2">
-                        <span>{{ Auth::user()->citizen->first_name . ' ' . Auth::user()->citizen->last_name }}</span> <i
-                            class="bi bi-chevron-down"></i></a>
+                        <span>{{ Auth::user()->resident->birth->name }}</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         @if (Auth::user()->hasPermissionTo('view-admin-dashboard', 'admin'))
                             <li><a href="{{ route('admin.dashboard') }}"> Dashboard</a></li>

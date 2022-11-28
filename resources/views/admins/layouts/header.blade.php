@@ -5,7 +5,7 @@
     </a>
     <i class="bi bi-list toggle-sidebar-btn"></i>
 </div><!-- End Logo -->
-
+{{-- @dd(Auth::user()) --}}
 {{-- <div class="search-bar">
     <form class="search-form d-flex align-items-center" method="POST" action="#">
         <input type="text" name="query" placeholder="Search" title="Enter search keyword">
@@ -166,7 +166,7 @@
 
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                 <li class="dropdown-header">
-                    <h6>{{ Auth::user()->citizen->first_name . ' ' . Auth::user()->citizen->last_name }}</h6>
+                    <h6>{{ Auth::user()->resident->birth->name }}</h6>
                     <span>{{ Auth::user()->roles->first()->name }}</span>
                 </li>
                 <li>

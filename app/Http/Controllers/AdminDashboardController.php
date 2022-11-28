@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\CitizensDataTable;
+use App\DataTables\ResidentBirthDataTable;
 use App\Models\Citizen;
+use App\Models\Resident;
 use App\Models\Visitor;
 use Illuminate\Http\Request;
 
@@ -40,27 +42,33 @@ class AdminDashboardController extends Controller
 
         return view('admins.index', compact('thisYearVisitorsCount', 'thisMonthVisitorsCount', 'thisDayVisitorsCount', 'yearlyVisitorPercentage', 'monthlyVisitorPercentage', 'dailyVisitorPercentage'));
     }
-
-    public function citizens(CitizensDataTable $dataTable)
+    #region Citizens
+    public function residents(CitizensDataTable $dataTable)
     {
-        return $dataTable->render('admins.citizens.index', ['sided' => false]);
+        return $dataTable->render('admins.resident.index', ['sided' => false]);
     }
 
-    public function citizens_show(Citizen $citizen)
+    public function resident_birth(ResidentBirthDataTable $dataTable)
+    {
+        return $dataTable->render('admins.resident.index', ['sided' => true]);
+    }
+
+    public function residents_show()
     {
         $sided = false;
-        return view('admins.citizens.show', compact('citizen', 'sided'));
+        return view('admins.resident.show', compact('resident', 'sided'));
     }
 
-    public function citizens_create()
+    public function residents_create()
     {
         $sided = false;
-        return view('admins.citizens.new');
+        return view('admins.resident.new');
     }
+    #endregion
 
     public function submissions()
     {
         $sided = false;
-        return view('admins.submissions.index', compact('sided'));
+        return view('admins.submission.index', compact('sided'));
     }
 }

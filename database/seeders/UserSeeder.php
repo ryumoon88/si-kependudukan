@@ -19,29 +19,19 @@ class UserSeeder extends Seeder
         $super_admin = Role::findByName('Super-Admin', 'admin');
         $user = User::factory()->create([
             'id_number' => '1370000000000008',
-            'citizen_id' => 1,
-            'phone_number' => '0812345678910',
+            'resident_id' => 1,
             'email' => 'naufalhady6@gmail.com'
         ]);
         $user->assignRole($super_admin);
         $user = User::factory()->create([
             'id_number' => '1370000000000002',
-            'citizen_id' => 2,
-            'phone_number' => '02981365123232',
-            'email' => 'jilhanhaura@gmail.com'
-        ]);
-        $user->assignRole($super_admin);
-
-        $user = User::factory()->create([
-            'id_number' => '1370000000000002',
-            'citizen_id' => 2,
-            'phone_number' => '02981365123232',
+            'resident_id' => 2,
             'email' => 'jilhanhaura@gmail.com'
         ]);
         $user->assignRole($super_admin);
 
         // for ($i = 2; $i <= 500; $i++) {
-        //     User::factory()->create(['citizen_id' => $i]);
+        //     User::factory()->create(['resident_id' => $i]);
         // }
     }
 }
